@@ -1,5 +1,8 @@
 # Laravel & Vue Commentable app
 
+![Screen Shot 2022-06-27 at 7 05 43 PM](https://user-images.githubusercontent.com/31971074/176066592-ca67af3e-e6cd-4caa-8d2c-0f361e12d8db.png)
+
+
 ## Description
 
 It creates a simple comment system that works with an API and a monolith that works with VueJS components and InertiaJS (Both architecture works).
@@ -75,6 +78,11 @@ php artisan serve
 ```
 
 ## Usage
+
+![Screen Shot 2022-06-27 at 7 05 57 PM](https://user-images.githubusercontent.com/31971074/176066631-3ef5e9aa-aada-430e-9c38-88167ed276c0.png)
+
+![Screen Shot 2022-06-27 at 7 06 06 PM](https://user-images.githubusercontent.com/31971074/176066648-dfa7199f-d9b8-4fb6-8225-3a4553ed0d1b.png)
+
 
 The project has two different architectures, Monolith and REST API. 
 
