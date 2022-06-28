@@ -1,0 +1,1104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Laravel Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@10.7.2/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+            </style>
+
+    <script>
+        var baseUrl = "http://comments.test";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-3.33.0.js"></script>
+
+    <script src="../docs/js/theme-default-3.33.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image" />
+    </span>
+</a>
+<div class="tocify-wrapper">
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                                                                            <ul id="tocify-header-0" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="introduction">
+                        <a href="#introduction">Introduction</a>
+                    </li>
+                                            
+                                                                    </ul>
+                                                <ul id="tocify-header-1" class="tocify-header">
+                    <li class="tocify-item level-1" data-unique="authenticating-requests">
+                        <a href="#authenticating-requests">Authenticating requests</a>
+                    </li>
+                                            
+                                                </ul>
+                    
+                    <ul id="tocify-header-2" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-articles">
+                        <a href="#endpoints-GETapi-articles">GET api/articles</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-articles--id-">
+                        <a href="#endpoints-GETapi-articles--id-">GET api/articles/{id}</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-comments">
+                        <a href="#endpoints-GETapi-comments">GET api/comments</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-comments">
+                        <a href="#endpoints-POSTapi-comments">POST api/comments</a>
+                    </li>
+                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-comments--id-">
+                        <a href="#endpoints-GETapi-comments--id-">GET api/comments/{id}</a>
+                    </li>
+                                                    </ul>
+                            </ul>
+        
+                        
+            </div>
+
+            <ul class="toc-footer" id="toc-footer">
+                            <li><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                            <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+                    </ul>
+        <ul class="toc-footer" id="last-updated">
+        <li>Last updated: June 28 2022</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+<blockquote>
+<p>Base URL</p>
+</blockquote>
+<pre><code class="language-yaml">http://comments.test</code></pre>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>This API is not authenticated.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+            <h2 id="endpoints-GETapi-articles">GET api/articles</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-articles">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://comments.test/api/articles" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://comments.test/api/articles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-articles">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 25,
+            &quot;title&quot;: &quot;Prof.&quot;,
+            &quot;excerpt&quot;: &quot;Dolores nisi architecto facere explicabo. Dolor et minima sed dignissimos at placeat. Unde ut reprehenderit aut explicabo.&quot;,
+            &quot;body&quot;: &quot;Nostrum aperiam ratione quibusdam itaque ut explicabo modi impedit. Illo velit quia eum. Sunt dolorem saepe voluptatem possimus veritatis facilis sed. Aliquam quam quaerat beatae et maiores eligendi. Ex omnis aut tempore commodi non voluptas. Dolores natus sint delectus deserunt provident vitae. A quod et porro sequi. Eveniet sint minus labore porro corporis qui. Eum saepe est qui aliquid. Cum porro quibusdam aut esse quasi quis. Quia aut quis blanditiis officia. Esse et illum porro a sed qui sit. Alias harum quo eum veritatis est at qui aliquid. Consequatur nisi rerum voluptas numquam totam ullam deleniti. Quis laborum ullam laboriosam perspiciatis. Iure repellat sapiente ut. Ut voluptatem in aut doloremque asperiores. Quis error qui aperiam et asperiores incidunt. Architecto voluptatem vel sint dolores harum a ab. Expedita et aperiam expedita dignissimos. Sed expedita amet pariatur quaerat consequatur. Non corrupti perferendis est at. Nihil aut ratione et tempora iste ut praesentium. Placeat voluptate praesentium suscipit blanditiis. Odio sit exercitationem beatae perferendis voluptatem. Omnis reprehenderit quis est. Adipisci doloremque maxime ea nihil eaque ea corrupti. Rerum eius nulla numquam. Neque consequatur cum eos error eius incidunt. Qui voluptatem quidem porro quaerat voluptas laborum voluptas. Nam et illo quod repellat architecto. Maiores consequatur harum atque. Quidem nam perspiciatis numquam praesentium dolorem autem. Et incidunt harum atque et sunt qui eligendi. Ut commodi totam voluptatum officia dolor vel tenetur. Ut culpa libero dolorum exercitationem fugiat rerum ut iste. Excepturi nisi sit natus aut recusandae rerum ut. Expedita nulla error consectetur et et. Fuga quia alias laboriosam alias delectus debitis voluptas. Dolor sunt eos quasi. Sequi aspernatur dolore tenetur et. Velit est tenetur assumenda est consequatur. Delectus autem est enim error dolores aut. Rerum dolorem reprehenderit nisi aut sed. Ipsam accusantium dolorem facere.&quot;,
+            &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+            &quot;comments&quot;: [
+                {
+                    &quot;id&quot;: 75,
+                    &quot;body&quot;: &quot;Vel sequi vel quia reprehenderit. Ab voluptatum corporis et earum. Et quisquam neque quia nihil ea.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 99,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 74,
+                    &quot;body&quot;: &quot;Modi reprehenderit aut cum asperiores ab. Ut amet dolorum similique tenetur vitae tempore aut.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 94,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 73,
+                    &quot;body&quot;: &quot;Impedit dolores aperiam iste distinctio similique quis voluptatem. Quia accusamus adipisci eos.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 95,
+                    &quot;comments&quot;: []
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 24,
+            &quot;title&quot;: &quot;Dr.&quot;,
+            &quot;excerpt&quot;: &quot;Soluta cumque perspiciatis est modi quia. Sint a laudantium sed quia ullam. Ab quas dignissimos hic consequatur. Assumenda dolorem omnis temporibus laudantium. Rerum eum est in sit placeat.&quot;,
+            &quot;body&quot;: &quot;Hic iure quia in totam iste. Ullam sit dolorum doloribus. Autem voluptatem enim culpa quis dolorum minus ducimus. Qui qui corrupti consectetur unde. Voluptatem quas atque maxime id. Et inventore officiis qui dolor perspiciatis. Fuga est explicabo voluptatum suscipit ad rerum. Voluptate non quam explicabo quo. Occaecati esse quia repellendus magni minima voluptas. Sint aut quo mollitia. Corporis maiores laudantium facilis non quas numquam ipsum. Possimus aut adipisci velit. Dolor et aut necessitatibus vero quis. Autem impedit facere hic itaque rem eos. Aut harum sequi et odit. Quasi occaecati ratione odit suscipit modi. Odit libero id dolorum similique quis quia sunt. Labore eos earum mollitia sunt iure sit omnis. Molestias officia error inventore quo et aut. Dolore officia ratione esse eligendi mollitia. Ullam suscipit vero dolores voluptatibus porro. Veritatis harum soluta a. Omnis eos ut adipisci cumque rem adipisci. Voluptatum incidunt soluta eos blanditiis cum dolores aut. Cum natus eum ut non minus. Laudantium labore ut repellat nesciunt minus consequatur. Veritatis illum nisi ut omnis id. Sit quo sed dolorum laudantium maiores. Quod sunt praesentium quas natus ullam occaecati. Error necessitatibus quos adipisci deserunt dolorum voluptatem. Est nulla labore ut voluptatibus ut. Distinctio corporis ab facilis voluptatem. Illum eveniet ut voluptas sed aperiam consequatur quam quaerat. Dolor ut beatae sapiente ut. Nam exercitationem et voluptatem eum ut fugiat. Occaecati quisquam mollitia et et architecto aliquam enim. Quo similique qui explicabo in aliquid veniam dolorem. Delectus autem cum mollitia qui. Voluptate eius quam excepturi quis. Reiciendis et perspiciatis magnam iusto dicta officia dicta. Ducimus et doloribus sit est delectus omnis. Omnis amet velit officiis incidunt. Quod aliquid accusantium quas dolores. Eaque illum magnam optio perspiciatis laboriosam et reiciendis ut. Esse autem autem vel sunt unde.&quot;,
+            &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+            &quot;comments&quot;: [
+                {
+                    &quot;id&quot;: 72,
+                    &quot;body&quot;: &quot;Aut neque a eum voluptas est debitis. Iste dignissimos nostrum non autem.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 73,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 71,
+                    &quot;body&quot;: &quot;Itaque voluptas aut omnis totam. Quis quae culpa ex optio.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 58,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 70,
+                    &quot;body&quot;: &quot;Impedit sequi sit quia consequatur dolorem voluptatum. Iure deleniti eos sequi omnis.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 85,
+                    &quot;comments&quot;: []
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 23,
+            &quot;title&quot;: &quot;Dr.&quot;,
+            &quot;excerpt&quot;: &quot;Eligendi ut voluptas temporibus quia. Et id inventore explicabo vel soluta rerum fugiat. Ipsum temporibus expedita perferendis possimus molestias quae.&quot;,
+            &quot;body&quot;: &quot;Culpa non ullam molestiae omnis rem. Occaecati occaecati ea molestiae vel optio. Delectus ut molestias suscipit nobis tempore perferendis quo. Ut ut perspiciatis molestias excepturi. Impedit consequuntur qui aliquam iure quae nesciunt aliquid. Eum quas soluta architecto eos perspiciatis nisi rerum. Illum id iste et eos necessitatibus provident. Mollitia ipsam sit vel commodi aliquam. Est delectus ab beatae unde nam incidunt. In quo distinctio id a accusamus. Perferendis qui eius voluptas aliquam. Alias ut consectetur nam et eius nisi laboriosam. Iure dicta dicta atque voluptatem. Qui optio aut nesciunt. Accusantium officiis magnam ad ut repellat in. Tempore ut qui unde rem. Quia commodi occaecati repellendus quia non laudantium. Eum eos enim voluptatibus voluptatem quo neque voluptatum. Nesciunt ullam porro ut placeat. Pariatur blanditiis dolorum temporibus tempora neque. Asperiores itaque maiores ut. Et omnis a delectus omnis vitae illum a. Quos quaerat voluptatem quae voluptatem inventore asperiores. Repellendus ea saepe dicta ut. Ullam quia voluptas voluptatum non velit consequatur. Tempora labore placeat doloremque sit ut. Numquam recusandae quo quos nam. Recusandae aliquam nulla repudiandae nisi rerum. Harum vel tenetur laboriosam. Omnis eius et eligendi dolorem laboriosam. Odit similique eum et est cumque vero consequatur a. Et est molestias enim labore porro minus. Reprehenderit voluptatem illo voluptatem et. Necessitatibus dolorem sit porro natus. Eveniet vero sint nisi sunt. Modi quis amet eveniet et et sit esse. Quia consequatur explicabo eum minus enim illo voluptate. Rerum aperiam quaerat ducimus dignissimos temporibus dicta laudantium. Velit eos temporibus ullam corporis et laudantium qui. Sint voluptatibus nam ipsum ut voluptatem est. Labore deserunt nam voluptatum nulla exercitationem neque et. Quaerat aliquid eum ut ea cupiditate voluptatum alias. Consequatur omnis aut vitae sed consectetur qui. Sequi quae praesentium reiciendis accusamus occaecati.&quot;,
+            &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+            &quot;comments&quot;: [
+                {
+                    &quot;id&quot;: 69,
+                    &quot;body&quot;: &quot;Quasi qui nesciunt dolor cum nihil minus. Pariatur similique perferendis commodi vel magnam.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 92,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 68,
+                    &quot;body&quot;: &quot;Unde rerum voluptatem necessitatibus eum est. Repellendus mollitia quae officiis aut qui quisquam.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 98,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 67,
+                    &quot;body&quot;: &quot;Nobis facilis maxime quibusdam sapiente. A sunt enim vitae. Sed et atque in ex qui omnis et.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 92,
+                    &quot;comments&quot;: []
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 22,
+            &quot;title&quot;: &quot;Prof.&quot;,
+            &quot;excerpt&quot;: &quot;Est fugiat voluptas eum quo aut illum ullam. Necessitatibus quod magni fugiat fugiat. Sunt neque ipsa non. Quaerat repellendus voluptatem doloribus qui.&quot;,
+            &quot;body&quot;: &quot;Nihil explicabo excepturi explicabo reprehenderit accusantium pariatur. Odit nihil dolorem praesentium iste velit aliquid. Quaerat qui adipisci dolores inventore. Commodi eum et voluptas voluptatem. Vitae nisi ducimus minus maiores et. Aspernatur ab voluptas iure omnis. Modi aliquid dignissimos quibusdam quo deleniti. Enim sint qui aut dolore voluptas deserunt dolorem. Cum officiis qui corporis aut itaque. Esse illum aut odio. Molestiae in reprehenderit minus accusantium sunt rem officiis dolores. Facere nulla quasi architecto voluptas velit et veniam. Eos voluptatem possimus ducimus. Officiis amet voluptas vitae architecto doloribus itaque. Asperiores alias voluptatem veniam odit. Ullam ipsum aut adipisci animi laboriosam ex. Voluptatum ut sequi quam explicabo tenetur amet. Expedita vero consequuntur sapiente. Magnam dolore error similique incidunt qui. Nemo pariatur unde qui a praesentium dignissimos. Ea quo eum autem ea veniam non. Ullam mollitia asperiores esse. Omnis molestiae aut eaque sed recusandae quia aut. Eligendi tempore explicabo ad est asperiores velit. Amet aut enim dolor voluptas. Tempora voluptatibus similique nihil ut ducimus. Accusamus excepturi et quidem pariatur quas adipisci. In quibusdam consequatur id velit rerum dolorum. Omnis doloremque ipsam aspernatur. Temporibus maiores perferendis quaerat voluptatem. Quis sed qui quibusdam facilis. Sit non temporibus quia reiciendis praesentium in. Ut alias adipisci beatae at et. Soluta necessitatibus qui quisquam ipsum. Minus aut labore non quibusdam pariatur veritatis numquam. Molestiae recusandae voluptatem architecto in aut magnam. Amet minima et nostrum dicta ut nihil. Qui id perferendis quia illum deserunt et. Aut placeat nam in nobis molestiae. Dolore optio est quis numquam repudiandae alias sapiente tenetur. Aperiam exercitationem voluptatem itaque rerum delectus magni omnis dolorem. Voluptatum accusantium totam dolore deleniti eum ex non earum.&quot;,
+            &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+            &quot;comments&quot;: [
+                {
+                    &quot;id&quot;: 66,
+                    &quot;body&quot;: &quot;Saepe nesciunt ut aut quam quod. A numquam illo temporibus quis mollitia facilis.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 81,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 65,
+                    &quot;body&quot;: &quot;Repellat maiores commodi nam expedita dicta magni quam. Quos unde at animi qui ea natus.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 88,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 64,
+                    &quot;body&quot;: &quot;Qui minus nemo est voluptate maiores. Debitis voluptatem a sed commodi et vero vel.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 83,
+                    &quot;comments&quot;: []
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 21,
+            &quot;title&quot;: &quot;Prof.&quot;,
+            &quot;excerpt&quot;: &quot;Labore voluptatem aut harum quae quaerat ipsum. Repudiandae dolores culpa repellat occaecati voluptate eius. Non nam repudiandae animi. Unde qui rerum dolor illum. Nisi in et beatae.&quot;,
+            &quot;body&quot;: &quot;Nostrum quia praesentium impedit. Quam sit occaecati quia. Sunt ea nulla eum illum. Blanditiis labore ullam qui vero harum. Ipsa aut et quis quia incidunt. Odio perferendis sequi voluptatem molestiae fugiat quasi a. Aspernatur aspernatur minus quidem sapiente perferendis. Fugit ab officia impedit sit placeat. Occaecati nemo ea dolore maiores ratione incidunt itaque. Fuga temporibus delectus necessitatibus vel cupiditate. Assumenda aspernatur facere est qui et. Consequuntur vel accusamus ipsa consequuntur beatae doloribus molestiae molestiae. Error autem neque ad facere deleniti aut illum. Autem eligendi voluptas aut magnam. Sunt qui sed quo nobis occaecati. Sed iusto officia omnis. Ut odit dolorem rerum. Adipisci harum et repellat praesentium debitis earum. Aliquam dolorem sequi non natus. Optio magnam reprehenderit et porro aliquid aliquid. Praesentium et similique in est. Fugit doloremque impedit omnis delectus facere voluptate similique quisquam. Sequi sequi aut vel enim blanditiis eum. Non et qui dolores sint ducimus et qui. Minus nulla aliquam sit magnam quia suscipit. Quisquam doloribus doloremque aspernatur vitae ab maiores id. Sit qui distinctio omnis quam ut et mollitia. Adipisci magni voluptatum et. Atque neque incidunt unde voluptas possimus culpa sapiente eaque. Voluptatum repellendus voluptas et. Error sit quo nesciunt laborum temporibus atque. Iste ut fuga aliquid quia. Enim alias aut beatae nobis dolor nulla recusandae minus. Dolorem assumenda eos vitae est sed qui neque. Qui voluptatem non ullam quia veritatis similique consequatur dignissimos. Distinctio modi ratione consequatur corporis explicabo sunt illum aut. Perspiciatis maxime in aut aperiam ratione. Dicta modi aut blanditiis rerum facilis ipsum unde fugiat. Id sunt accusamus eaque omnis qui dicta. Quos et error voluptatem laborum quis blanditiis voluptatem. Itaque saepe earum illo. Consequatur ut ut et ratione corporis molestiae sunt.&quot;,
+            &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+            &quot;comments&quot;: [
+                {
+                    &quot;id&quot;: 63,
+                    &quot;body&quot;: &quot;Error laudantium reprehenderit quia nobis error. Et et repellendus sint et.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 75,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 62,
+                    &quot;body&quot;: &quot;Et odio ex non ullam ipsum. Vel totam qui dicta pariatur. Vel id recusandae sit in.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 83,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 61,
+                    &quot;body&quot;: &quot;Et fuga laborum vel incidunt. Incidunt sint est vero tenetur soluta sunt.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 73,
+                    &quot;comments&quot;: []
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: 20,
+            &quot;title&quot;: &quot;Miss&quot;,
+            &quot;excerpt&quot;: &quot;Atque praesentium rerum voluptatem qui qui dolor. Assumenda ea est voluptatem. Blanditiis sit non illo omnis aut sequi et reiciendis. Ad distinctio aut voluptatem voluptas.&quot;,
+            &quot;body&quot;: &quot;Ut non quasi assumenda nemo dolor eos molestiae. Eius eius sed est sapiente consequatur tempore at. Animi dolores culpa facilis praesentium. Sed recusandae error doloribus voluptate sit excepturi eum. Ea aliquam laudantium doloribus id velit. Tempora labore repellat consequatur vero voluptatibus consequatur ea. Quia quo ut voluptatibus vel eius voluptatem omnis. Fugit odio distinctio ut autem blanditiis non maxime. Omnis sequi velit et exercitationem aliquam cum. Aut amet vel iusto unde magni occaecati eos sequi. Eius odio molestiae et ut praesentium. Quaerat rem aperiam dolorem blanditiis voluptates saepe aut reprehenderit. Velit dolores hic eos temporibus laborum velit recusandae provident. Aliquam eaque quasi pariatur quisquam. Est enim fugit voluptatem ab. Aspernatur consequuntur illum sint deserunt necessitatibus. Ut eius reprehenderit odit officia aut necessitatibus provident. Sed laudantium perspiciatis qui doloribus. Omnis totam quas qui ut optio. Quae qui autem ut tempora quasi. Illo repudiandae facere sint dolor amet. Accusamus ut vel excepturi rerum dolor et ipsum. Cum corrupti in omnis quia sit. Fugiat quam incidunt repellat labore ducimus. Suscipit blanditiis ea voluptas ex et. Non libero voluptatem debitis magni quo. Exercitationem voluptatem iusto illum beatae non adipisci autem non. Quia dolorem vel itaque distinctio. Totam doloremque soluta nam labore ipsum. Consequatur dolores optio autem eaque qui quos et reprehenderit. Doloremque hic eius dolorem aliquid. Id nam aut beatae id consequatur a ut. Iusto nobis quia itaque deleniti. Ut debitis explicabo sit fugiat natus cupiditate. Ut dolores eligendi doloribus. Nulla facilis sint excepturi optio. Vitae inventore quaerat vel error ut nobis. Assumenda beatae id voluptatem exercitationem accusantium veniam. Neque quas libero quis aut ut dicta. Et possimus sed et. Voluptas placeat autem ducimus et nobis. Inventore maxime iusto aut doloremque.&quot;,
+            &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+            &quot;comments&quot;: [
+                {
+                    &quot;id&quot;: 60,
+                    &quot;body&quot;: &quot;Commodi rem ad nulla dicta quibusdam. Sunt eos sint error qui voluptas totam beatae.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 84,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 59,
+                    &quot;body&quot;: &quot;Et ad architecto quos itaque ut facere. Et impedit eius minima qui aut autem. Neque quis est animi.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 99,
+                    &quot;comments&quot;: []
+                },
+                {
+                    &quot;id&quot;: 58,
+                    &quot;body&quot;: &quot;Optio id nihil maiores ipsum. Est illum quaerat quam aut aut dolores.&quot;,
+                    &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                    &quot;total_words&quot;: 69,
+                    &quot;comments&quot;: []
+                }
+            ]
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://comments.test/api/articles?page=1&quot;,
+        &quot;last&quot;: &quot;http://comments.test/api/articles?page=5&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: &quot;http://comments.test/api/articles?page=2&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 5,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/articles?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/articles?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/articles?page=3&quot;,
+                &quot;label&quot;: &quot;3&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/articles?page=4&quot;,
+                &quot;label&quot;: &quot;4&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/articles?page=5&quot;,
+                &quot;label&quot;: &quot;5&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/articles?page=2&quot;,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://comments.test/api/articles&quot;,
+        &quot;per_page&quot;: 6,
+        &quot;to&quot;: 6,
+        &quot;total&quot;: 25
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-articles" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-articles"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-articles"></code></pre>
+</span>
+<span id="execution-error-GETapi-articles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-articles"></code></pre>
+</span>
+<form id="form-GETapi-articles" data-method="GET"
+      data-path="api/articles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-articles', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-articles"
+                    onclick="tryItOut('GETapi-articles');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-articles"
+                    onclick="cancelTryOut('GETapi-articles');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-articles" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/articles</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-articles--id-">GET api/articles/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-articles--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://comments.test/api/articles/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://comments.test/api/articles/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-articles--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;title&quot;: &quot;Mr.&quot;,
+        &quot;excerpt&quot;: &quot;Quia occaecati nisi sequi iste explicabo omnis. Porro deserunt consequuntur odit deserunt qui vero optio. Non suscipit qui molestiae nihil perferendis omnis ut.&quot;,
+        &quot;body&quot;: &quot;Maxime eos et vel. Et assumenda dolor dolor ut natus est. Sit blanditiis blanditiis similique eos rerum officiis qui. Odio provident dolores odio blanditiis modi hic illo reiciendis. Doloremque reprehenderit nesciunt quo culpa quia quos ut rem. Sit voluptatem asperiores voluptate et esse commodi omnis. Occaecati deleniti nulla est. Perspiciatis ab vel ratione. Inventore corrupti autem est sed cumque. Voluptatem temporibus voluptatem dolores tempora delectus. Omnis quia non et quisquam id error dolor. Et sed consectetur ea dolorum perspiciatis nisi ut. Qui aperiam placeat fugiat sit ut ut expedita. Est earum quod qui dolor eum delectus. Voluptatem qui est ipsam id rerum. Id quas quos libero ducimus recusandae earum. Distinctio inventore eius in et repellat ex dolor mollitia. Velit accusamus est est et totam quo dolores. Dolor praesentium quia maiores quia consectetur aut voluptatibus. Sit accusantium nisi natus aliquam nostrum cum. Odit ut delectus laudantium consequuntur. Voluptatum sit magnam sed velit perspiciatis. Mollitia odit dolores voluptatem cumque in delectus labore voluptatem. Voluptatibus et alias vel nam ipsam occaecati. Sint fugit sint qui quo debitis sit ut qui. Delectus molestias optio error eius error eum. Dolorem error architecto dicta deserunt ipsam. Numquam cum odio libero ut aut libero odio. Et recusandae mollitia odit hic aut et non. Tenetur qui sequi sunt. Ea sit repudiandae quo necessitatibus dolore et alias. Sint fuga est adipisci ea et sit. Sunt optio nesciunt doloremque a enim aperiam est magni. Dolore ut consequatur et eius sit dolor. Impedit ut consequatur voluptatem omnis temporibus voluptatem deserunt aut. Maxime occaecati et et ab consequatur consequuntur. Maxime iste atque non neque voluptas autem occaecati. Qui quia neque voluptatum perspiciatis. Ut itaque illo iusto libero.&quot;,
+        &quot;image&quot;: &quot;https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80&quot;,
+        &quot;type&quot;: &quot;App\\Models\\Article&quot;,
+        &quot;comments&quot;: [
+            {
+                &quot;id&quot;: 3,
+                &quot;body&quot;: &quot;Odit enim unde quibusdam aliquid et veniam et. Commodi dolorum ratione consectetur est.&quot;,
+                &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                &quot;total_words&quot;: 87,
+                &quot;comments&quot;: []
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;body&quot;: &quot;Enim quia commodi non beatae. Non ipsa non qui totam. Aut nobis cupiditate consequatur odio esse.&quot;,
+                &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                &quot;total_words&quot;: 97,
+                &quot;comments&quot;: []
+            },
+            {
+                &quot;id&quot;: 1,
+                &quot;body&quot;: &quot;Nam velit dolores omnis porro magnam. Provident illo dicta deserunt quisquam.&quot;,
+                &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+                &quot;total_words&quot;: 77,
+                &quot;comments&quot;: []
+            }
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-articles--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-articles--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-articles--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-articles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-articles--id-"></code></pre>
+</span>
+<form id="form-GETapi-articles--id-" data-method="GET"
+      data-path="api/articles/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-articles--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-articles--id-"
+                    onclick="tryItOut('GETapi-articles--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-articles--id-"
+                    onclick="cancelTryOut('GETapi-articles--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-articles--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/articles/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-articles--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the article.</p>
+            </p>
+                    </form>
+
+            <h2 id="endpoints-GETapi-comments">GET api/comments</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-comments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://comments.test/api/comments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://comments.test/api/comments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-comments">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 75,
+            &quot;body&quot;: &quot;Vel sequi vel quia reprehenderit. Ab voluptatum corporis et earum. Et quisquam neque quia nihil ea.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 99,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 74,
+            &quot;body&quot;: &quot;Modi reprehenderit aut cum asperiores ab. Ut amet dolorum similique tenetur vitae tempore aut.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 94,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 73,
+            &quot;body&quot;: &quot;Impedit dolores aperiam iste distinctio similique quis voluptatem. Quia accusamus adipisci eos.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 95,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 72,
+            &quot;body&quot;: &quot;Aut neque a eum voluptas est debitis. Iste dignissimos nostrum non autem.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 73,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 71,
+            &quot;body&quot;: &quot;Itaque voluptas aut omnis totam. Quis quae culpa ex optio.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 58,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 70,
+            &quot;body&quot;: &quot;Impedit sequi sit quia consequatur dolorem voluptatum. Iure deleniti eos sequi omnis.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 85,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 69,
+            &quot;body&quot;: &quot;Quasi qui nesciunt dolor cum nihil minus. Pariatur similique perferendis commodi vel magnam.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 92,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 68,
+            &quot;body&quot;: &quot;Unde rerum voluptatem necessitatibus eum est. Repellendus mollitia quae officiis aut qui quisquam.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 98,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 67,
+            &quot;body&quot;: &quot;Nobis facilis maxime quibusdam sapiente. A sunt enim vitae. Sed et atque in ex qui omnis et.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 92,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 66,
+            &quot;body&quot;: &quot;Saepe nesciunt ut aut quam quod. A numquam illo temporibus quis mollitia facilis.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 81,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 65,
+            &quot;body&quot;: &quot;Repellat maiores commodi nam expedita dicta magni quam. Quos unde at animi qui ea natus.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 88,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 64,
+            &quot;body&quot;: &quot;Qui minus nemo est voluptate maiores. Debitis voluptatem a sed commodi et vero vel.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 83,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 63,
+            &quot;body&quot;: &quot;Error laudantium reprehenderit quia nobis error. Et et repellendus sint et.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 75,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 62,
+            &quot;body&quot;: &quot;Et odio ex non ullam ipsum. Vel totam qui dicta pariatur. Vel id recusandae sit in.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 83,
+            &quot;comments&quot;: []
+        },
+        {
+            &quot;id&quot;: 61,
+            &quot;body&quot;: &quot;Et fuga laborum vel incidunt. Incidunt sint est vero tenetur soluta sunt.&quot;,
+            &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+            &quot;total_words&quot;: 73,
+            &quot;comments&quot;: []
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://comments.test/api/comments?page=1&quot;,
+        &quot;last&quot;: &quot;http://comments.test/api/comments?page=5&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: &quot;http://comments.test/api/comments?page=2&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 5,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/comments?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/comments?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/comments?page=3&quot;,
+                &quot;label&quot;: &quot;3&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/comments?page=4&quot;,
+                &quot;label&quot;: &quot;4&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/comments?page=5&quot;,
+                &quot;label&quot;: &quot;5&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://comments.test/api/comments?page=2&quot;,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://comments.test/api/comments&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 15,
+        &quot;total&quot;: 75
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-comments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-comments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-comments"></code></pre>
+</span>
+<span id="execution-error-GETapi-comments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-comments"></code></pre>
+</span>
+<form id="form-GETapi-comments" data-method="GET"
+      data-path="api/comments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-comments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-comments"
+                    onclick="tryItOut('GETapi-comments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-comments"
+                    onclick="cancelTryOut('GETapi-comments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-comments" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/comments</code></b>
+        </p>
+                    </form>
+
+            <h2 id="endpoints-POSTapi-comments">POST api/comments</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-comments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://comments.test/api/comments" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"body\": \"rgrybmukhkbzzumtedtopdgzmlrfwhjqibmyeviohbzzrdkcrwctmluqspxxcespdevilrwafswqyoqgaxdgnbzqkfwldxasdpiihlcmnmwfztcjfeulvbxkpvttbkzdzlayyjvgnzdxqolfgfahzkuapvutlhiabvrgkjaxkvwyfnaczvutycwzokrspvcnslkilcg\",
+    \"commentable_id\": 13,
+    \"commentable_type\": \"App\\\\Models\\\\Article\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://comments.test/api/comments"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "body": "rgrybmukhkbzzumtedtopdgzmlrfwhjqibmyeviohbzzrdkcrwctmluqspxxcespdevilrwafswqyoqgaxdgnbzqkfwldxasdpiihlcmnmwfztcjfeulvbxkpvttbkzdzlayyjvgnzdxqolfgfahzkuapvutlhiabvrgkjaxkvwyfnaczvutycwzokrspvcnslkilcg",
+    "commentable_id": 13,
+    "commentable_type": "App\\Models\\Article"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-comments">
+</span>
+<span id="execution-results-POSTapi-comments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-comments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-comments"></code></pre>
+</span>
+<span id="execution-error-POSTapi-comments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-comments"></code></pre>
+</span>
+<form id="form-POSTapi-comments" data-method="POST"
+      data-path="api/comments"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-comments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-comments"
+                    onclick="tryItOut('POSTapi-comments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-comments"
+                    onclick="cancelTryOut('POSTapi-comments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-comments" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/comments</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>body</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="body"
+               data-endpoint="POSTapi-comments"
+               value="rgrybmukhkbzzumtedtopdgzmlrfwhjqibmyeviohbzzrdkcrwctmluqspxxcespdevilrwafswqyoqgaxdgnbzqkfwldxasdpiihlcmnmwfztcjfeulvbxkpvttbkzdzlayyjvgnzdxqolfgfahzkuapvutlhiabvrgkjaxkvwyfnaczvutycwzokrspvcnslkilcg"
+               data-component="body" hidden>
+    <br>
+<p>Must be at least 1 characters. Must not be greater than 200 characters.</p>
+        </p>
+                <p>
+            <b><code>commentable_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="commentable_id"
+               data-endpoint="POSTapi-comments"
+               value="13"
+               data-component="body" hidden>
+    <br>
+
+        </p>
+                <p>
+            <b><code>commentable_type</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="commentable_type"
+               data-endpoint="POSTapi-comments"
+               value="App\Models\Article"
+               data-component="body" hidden>
+    <br>
+<p>Must be one of <code>App\Models\Article</code> or <code>App\Models\Comment</code>.</p>
+        </p>
+        </form>
+
+            <h2 id="endpoints-GETapi-comments--id-">GET api/comments/{id}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-comments--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://comments.test/api/comments/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://comments.test/api/comments/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-comments--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary>
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 56
+access-control-allow-origin: *
+ </code></pre>
+        </details>         <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;body&quot;: &quot;Nam velit dolores omnis porro magnam. Provident illo dicta deserunt quisquam.&quot;,
+        &quot;type&quot;: &quot;App\\Models\\Comment&quot;,
+        &quot;total_words&quot;: 77,
+        &quot;comments&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-comments--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-comments--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-comments--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-comments--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-comments--id-"></code></pre>
+</span>
+<form id="form-GETapi-comments--id-" data-method="GET"
+      data-path="api/comments/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-comments--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-comments--id-"
+                    onclick="tryItOut('GETapi-comments--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-comments--id-"
+                    onclick="cancelTryOut('GETapi-comments--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-comments--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/comments/{id}</code></b>
+        </p>
+                    <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-comments--id-"
+               value="1"
+               data-component="url" hidden>
+    <br>
+<p>The ID of the comment.</p>
+            </p>
+                    </form>
+
+    
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
